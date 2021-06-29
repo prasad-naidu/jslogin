@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.box{
+    width: 400px;
+    height: 350px;
+    background-color: ghostwhite;
+    position: relative;
+    left: 33%;
+    margin-top: 120px;
+    border: 1px solid;
+}
+.in{
+    margin-left: 127px;
+}
+.reg{
+    display: none;
+}
+.log{
+    display: none;
+}
+</style>
+<script>
+function dis(){
+let a=document.getElementById("dis2").style="display:none";
+let b=document.getElementById("dis").style="display:block";
+let c=document.getElementById("regbutton").style="display:none"
+}
+function dis2(){
+let a=document.getElementById("dis").style="display:none";
+let b=document.getElementById("dis2").style="display:block ";
+let c=document.getElementById("logbutton").style="display:none"
+}
+function valid(){
+    var user=document.getElementById("un").value
+    var pass =document.getElementById("pass").value
+    if(user==""){
+      var user= document.getElementById("name1").innerText="name should not empty"
+    }
+    if(pass==""){
+     var  pass= document.getElementById("paid").innerText="password must be entered"
+    }
+
+}
+function regvalid(){
+    var firstname=document.getElementById("name").value
+    var user=document.getElementById("user").value
+    if(firstname==""){
+        var firstname=document.getElementById("first").innerText="first name must be entered"
+    }
+    if(user==""){
+        var user=document.getElementById("reguser").innerText="username should entered"
+    }
+}
+
+</script>
+<body>
+   <div class="box">
+       <input class ="in" type="submit"  id ="logbutton" value="login" onclick="dis()" > | <input type="submit" value="register" id="regbutton" onclick="dis2()">
+    <div id="dis" class="log" > <br>
+       <fieldset>
+           <legend>login
+
+           </legend>
+           <!-- <br> -->
+           username: <br>
+           <input type="text" id="un"> 
+           <span id="name1" style="color: red"></span>
+           <br>
+           password: <br>
+           <input type="password" id="pass"> 
+           <span style="color: red;" id="paid"></span>
+           <br>
+           <input type="submit" value="login" onclick="valid()"> <br>
+           <p>create an account</p>
+           <input type="submit" value="register" id="regbutton" onclick="dis2()">
+       </fieldset>
+    </div>
+
+    <div id="dis2" class="reg" >
+     <fieldset>
+         <legend>register</legend>
+         <!-- <br> -->
+         firstname: <br>
+         <input type="text" id="name">
+         <span id="first" style="color: red"></span> <br>
+         username: <br>
+         <input type="text" id="user"> 
+         <span id="reguser" style="color: red"></span><br>
+         phone: <br>
+         <input type="number" id="num"> 
+         <br>
+         gender:  <br>
+         <input type="radio" name="same"> male
+         <input type="radio" name="same"> female <br>
+         <input type="submit" value="register" onclick="regvalid()">
+         <p>already have an account</p>
+         <input class ="in" type="submit"  id ="logbutton" value="login" onclick="dis()" >
+     </fieldset>
+    </div>
+    </div>
+</body>
+</html>
